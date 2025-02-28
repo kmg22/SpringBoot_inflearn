@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/D:/_H2_/@SpringBoot/jpashop
+#   mvcc=true : 여러 접근 있을 때 빨리 처리 되도록
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+#      자동으로 테이블 생성
+    properties:
+      hibernate:
+#        show_sql: true # system.out을 통해 출력됨
+        format_sql: true
+    database:
+      platform: org.hibernate.dialect.H@Dialect
+
+logging.level:
+    org.hibernate.SQL: debug
+#    show_sql과 유사.
+#    org.hibernate.orm.jdbc.bind: trace
